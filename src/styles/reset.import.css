@@ -1,0 +1,39 @@
+/*
+ * Basic reset css for mobile
+ * author : cheunglong
+ */
+html, body, div, span, iframe, h1, h2, h3, h4, h5, h6, p, blockquote,a,address,
+em, img, ol, ul, li, fieldset, form, label, legend, table, tbody, tfoot, thead, tr, th, td,i,b,s {
+    margin:0; padding:0; border:0; font-weight:inherit; font-style:inherit; font-size:100%;font-family:-apple-system;
+    font-family:-apple-system,punctuation,"PingFangSC-Regular","Microsoft Yahei","sans-serif";
+}
+p{margin-bottom: 0;}
+ul,ol{list-style: none}
+a img { border:none;vertical-align: top; }
+a {text-decoration: none;}
+
+button {overflow:visible;padding:0;margin:0;border:0 none;background-color:transparent;font-family: inherit;}
+button::-moz-focus-inner { padding:0;}
+
+textarea,input{background:none;padding:0;-webkit-border-radius:0;-moz-border-radius:0;border-radius:0;-webkit-appearance:none;font-family: inherit;}
+input[type=password] {-webkit-text-security:disc;}
+textarea:focus,input:focus,button:focus{outline:none;}
+body {word-wrap:break-word;}
+* {-webkit-tap-highlight-color:rgba(0,0,0,0);}
+
+/*==============================
+ * Title: Hybrid reset
+ * Description: 独立版、结合版内嵌H5页面需要禁止选中文本、禁止长按弹出系统菜单
+ * @author: Cheung
+ * Time：2015.03.25 Update
+=================================*/
+
+/* 全局禁止选中文本 */
+.hybrid {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+/* 禁止长按链接与图片弹出菜单 */
+.hybrid a,.hybrid img {-webkit-touch-callout:none;}

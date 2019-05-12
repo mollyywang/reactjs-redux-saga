@@ -1,0 +1,30 @@
+@import '../../styles/common.import.less';
+
+.search-form.up{transform: translateY(0);}
+.search-form{
+    transform: translateY(150px);
+    z-index: 99;
+    transition: all .5s;
+    padding-bottom: 0;
+    position: relative;
+    .search-in{margin-bottom: 0;}
+    .search-detail{
+        color: #222;padding-left: 4px;
+        b{color: #fd403e}
+    }
+    .btn-search{
+        float: right;
+        span{    
+            color: #fff;padding-left: 0;
+        }
+    }
+}
+.search-form::after{
+    content: "";
+    position: absolute;
+    width: 100%;
+    bottom: 1px;
+    left: 0;
+    height: 2px;
+    background-color:#F2F4F7;
+}
