@@ -2,13 +2,13 @@
 // selectors
 export function isInStar(state, props) {
   const ids = state.star.items.map(item => item._id)
-  return ids.indexOf(props._id) === -1 ? false : true
+  return ids.indexOf(props._id) !== -1
 }
 
 export function getProcessing(state) {
-  return state.star.processing;
+  return state.star.processing
 }
 
 export function getItems(state) {
-  return state.star.items;
+  return state.star.items
 }

@@ -1,15 +1,15 @@
 
 export function debounce(fn, wait, options) {
-  wait = wait || 0;
-  var timerId;
+  wait = wait || 0
+  let timerId
   function debounced() {
     if (timerId) {
-      clearTimeout(timerId);
-      timerId = null;
+      clearTimeout(timerId)
+      timerId = null
     }
-    timerId = setTimeout(function () {
-      fn(options);
-    }, wait);
+    timerId = setTimeout(() => {
+      fn(options)
+    }, wait)
   }
-  return debounced;
+  return debounced
 }

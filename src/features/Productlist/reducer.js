@@ -1,5 +1,5 @@
-import { createReducer } from "reduxsauce";
-import * as Types from "./actionType";
+import { createReducer } from 'reduxsauce'
+import * as Types from './actionType'
 
 const INITIAL_STATE = {
   items: [],
@@ -10,42 +10,42 @@ const INITIAL_STATE = {
 }
 
 function handleIndexReset(state = INITIAL_STATE) {
-  console.log("reset----------");
+  console.log('reset----------')
   return INITIAL_STATE
 }
 
 function handleGetlistRequest(state = INITIAL_STATE, { payload }) {
-  console.log("request----------", payload);
+  console.log('request----------', payload)
   return {
     ...state,
     processing: true,
-  };
+  }
 }
 
 function handleGetlistSucceeded(state = INITIAL_STATE, { payload }) {
-  console.log("succeeded----------", payload);
+  console.log('succeeded----------', payload)
   return {
     ...state,
     index: state.index + state.counts,
     processing: false,
     allNums: payload.allNums,
     items: state.items.concat(payload.productData),
-  };
+  }
 }
 
 function handleGetlistFailed(state = INITIAL_STATE, { payload }) {
-  console.log("failed----------", payload);
+  console.log('failed----------', payload)
   return {
     ...state,
-    processing: false
-  };
+    processing: false,
+  }
 }
 
 export const HANDLERS = {
   [Types.GETLIST_REQUEST]: handleGetlistRequest,
   [Types.GETLIST_SUCCESS]: handleGetlistSucceeded,
   [Types.GETLIST_FAILURE]: handleGetlistFailed,
-  [Types.RESET_INDEX]: handleIndexReset
-};
+  [Types.RESET_INDEX]: handleIndexReset,
+}
 
-export default createReducer(INITIAL_STATE, HANDLERS);
+export default createReducer(INITIAL_STATE, HANDLERS)

@@ -1,16 +1,16 @@
 // selectors
 export function getIsLogin(state) {
-  return state.user.isLogin;
+  return state.user.isLogin
 }
 export function getName(state) {
-  return state.user.username;
+  return state.user.username
 }
 export function getToken(state) {
-  return state.user.token;
+  return state.user.token
 }
 export function getProcessing(state) {
-  return state.user.processing;
+  return state.user.processing
 }
 export function getMsg(state) {
-  return state.user.msg;
+  return state.user.msg
 }

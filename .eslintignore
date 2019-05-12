@@ -1,0 +1,4 @@
+node_modules/*.js
+public/*.js
+config-overrides.js
+serviceWorker.js
