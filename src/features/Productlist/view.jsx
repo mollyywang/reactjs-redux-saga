@@ -18,47 +18,47 @@ class Productlist extends Component {
     //
   }
 
-  componentDidMount(){
+  componentDidMount() {
     this.handleScroll = this.handleScroll.bind(this)
-     //监听下拉加载
-     const pro = this.refs.productlist;
-     let fn = debounce(this.handleScroll, 100, pro);
-     pro.addEventListener('touchmove', fn);
+    //监听下拉加载
+    const pro = this.refs.productlist;
+    let fn = debounce(this.handleScroll, 100, pro);
+    pro.addEventListener('touchmove', fn);
   }
 
   handleScroll = (dom) => {
     const { actions, name, index, allNums, processing } = this.props;
     if (!name || name === "") {
-        console.log(name);
-        return false;
+      console.log(name);
+      return false;
     }
 
     //翻页 loading
     if (dom.scrollHeight - dom.scrollTop - dom.offsetHeight < 100) {
-        if (index >= allNums) {
-            console.log('processing end')
-        } else {
-            if (!!processing) {
-                return false;
-            }
-            actions.request(name);
-            return dom.scrollTop = dom.scrollHeight
+      if (index >= allNums) {
+        console.log('processing end')
+      } else {
+        if (!!processing) {
+          return false;
         }
+        actions.request(name);
+        return dom.scrollTop = dom.scrollHeight
+      }
     }
-}
+  }
 
 
   render() {
     const { items, processing } = this.props;
     return (
-        <ul className="productlist" ref="productlist">
-            {items.map(product => (
-                <li key={product._id} className="productlist-item">
-                    <Product {...product} />
-                </li>
-            ))}
-            <Spin size="large" spinning={processing} />
-        </ul>
+      <ul className="productlist" ref="productlist">
+        {items.map(product => (
+          <li key={product._id} className="productlist-item">
+            <Product {...product} />
+          </li>
+        ))}
+        <Spin size="large" spinning={processing} />
+      </ul>
     )
   }
 }

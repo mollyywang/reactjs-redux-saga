@@ -7,8 +7,8 @@ const INITIAL_STATE = {
 
 function handleChangeName(state = INITIAL_STATE, { payload }) {
   return {
-      ...state,
-      name: payload
+    ...state,
+    name: payload
   };
 }
 

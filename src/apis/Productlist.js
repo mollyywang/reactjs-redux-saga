@@ -1,5 +1,9 @@
-import http from "../utils/HttpUtil";
+import http from '../utils/HttpUtil'
 
-export const getlist = params => {
-    return http.post("/public/products/getlist", params);
-};
+const ProductlistApi = {
+  getlist : params => {
+    return http.post('/public/products/getlist', params)
+  }
+}
+
+export default ProductlistApi

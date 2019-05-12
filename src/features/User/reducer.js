@@ -9,12 +9,12 @@ const INITIAL_STATE = {
   msg: ""
 }
 
-function handleLoginRequest(state = INITIAL_STATE, { payload }){
-    console.log("request----------", payload);
-    return {
-      ...state,
-      processing: true
-    };
+function handleLoginRequest(state = INITIAL_STATE, { payload }) {
+  console.log("request----------", payload);
+  return {
+    ...state,
+    processing: true
+  };
 }
 
 function handleLoginSucceeded(state = INITIAL_STATE, { payload }) {
@@ -34,7 +34,7 @@ function handleLoginFailed(state = INITIAL_STATE, { payload }) {
     ...state,
     isLogin: false,
     processing: false,
-    msg:'login fail, username or password is wrong !'
+    msg: 'login fail, username or password is wrong !'
   };
 }
 

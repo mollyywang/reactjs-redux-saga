@@ -11,10 +11,10 @@ Actions.productsGet = Productlist_Actions.request;
 Actions.productsreset = Productlist_Actions.reset;
 
 const mapStateToProps = (state, props) => {
-    return {
-        name: getName(state, props),
-        allNums: getAllNums(state)
-    }
+  return {
+    name: getName(state, props),
+    allNums: getAllNums(state)
+  }
 }
 
 const mapDispatchToProps = dispatch => ({
@@ -22,7 +22,7 @@ const mapDispatchToProps = dispatch => ({
 });
 
 export default withRouter(connect(
-    mapStateToProps,
-    mapDispatchToProps
-  )(SearchForm))
+  mapStateToProps,
+  mapDispatchToProps
+)(SearchForm))
 

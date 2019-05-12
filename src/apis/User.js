@@ -1,5 +1,9 @@
-import http from "../utils/HttpUtil";
+import http from '../utils/HttpUtil'
 
-export const login = params => {
-  return http.post("/public/user/login", params);
-};
+const UserApi = {
+  login : params => {
+    return http.post('/public/user/login', params)
+  }
+}
+
+export default UserApi

@@ -13,7 +13,7 @@ const mapStateToProps = (state, props) => {
 };
 
 const Actions = {//user others actions
-  logout:UserActions.reset,
+  logout: UserActions.reset,
 }
 
 const mapDispatchToProps = dispatch => ({
@@ -21,6 +21,6 @@ const mapDispatchToProps = dispatch => ({
 });
 
 export default connect(
-    mapStateToProps,
-    mapDispatchToProps
-  )(Me)
+  mapStateToProps,
+  mapDispatchToProps
+)(Me)

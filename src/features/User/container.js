@@ -19,7 +19,7 @@ const mapDispatchToProps = dispatch => ({
 });
 
 export default connect(
-    mapStateToProps,
-    mapDispatchToProps
-  )(userForm)
+  mapStateToProps,
+  mapDispatchToProps
+)(userForm)
 

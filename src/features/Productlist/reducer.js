@@ -14,12 +14,12 @@ function handleIndexReset(state = INITIAL_STATE) {
   return INITIAL_STATE
 }
 
-function handleGetlistRequest(state = INITIAL_STATE, { payload }){
-    console.log("request----------", payload);
-    return {
-      ...state,
-      processing: true,
-    };
+function handleGetlistRequest(state = INITIAL_STATE, { payload }) {
+  console.log("request----------", payload);
+  return {
+    ...state,
+    processing: true,
+  };
 }
 
 function handleGetlistSucceeded(state = INITIAL_STATE, { payload }) {

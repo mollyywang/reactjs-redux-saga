@@ -1,18 +1,28 @@
-@import url('../../styles/common.import.less');
+@import url("../../styles/common.import.less");
 
-.star-wrap{
-    .flex-layout();
-    .star-main{
-        .flex-main();
+.star-wrap {
+  .flex-layout();
+  .star-main {
+    .flex-main();
+  }
+  .star-con {
+    text-align: center;
+    .alert-info {
+      font-size: 22px;
+      margin-top: 20px;
+      margin-bottom: 12px;
     }
-    .star-con{
-        text-align: center;
-        .alert-info{ font-size: 22px; margin-top: 20px; margin-bottom: 12px;}
-        -webkit-overflow-scrolling: touch;
-        -webkit-box-flex: 1;flex: 1;
-        overflow-y: scroll;margin-bottom: 0;
-        position: relative;
-        .ant-spin{margin: 18px 0;}        
+    -webkit-overflow-scrolling: touch;
+    -webkit-box-flex: 1;
+    flex: 1;
+    overflow-y: scroll;
+    margin-bottom: 0;
+    position: relative;
+    .ant-spin {
+      margin: 18px 0;
     }
-    .star-con::-webkit-scrollbar { width: 0 !important }    
+  }
+  .star-con::-webkit-scrollbar {
+    width: 0 !important;
+  }
 }

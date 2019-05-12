@@ -13,8 +13,8 @@ const mapStateToProps = (state, props) => {
 };
 
 const Actions = {//user others actions
-  removeStar_request:StarActions.removeStar_request,
-  addStar_request:StarActions.addStar_request
+  removeStar_request: StarActions.removeStar_request,
+  addStar_request: StarActions.addStar_request
 }
 
 const mapDispatchToProps = dispatch => ({
@@ -22,7 +22,7 @@ const mapDispatchToProps = dispatch => ({
 });
 
 export default connect(
-    mapStateToProps,
-    mapDispatchToProps
-  )(productCom)
+  mapStateToProps,
+  mapDispatchToProps
+)(productCom)
 

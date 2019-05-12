@@ -7,9 +7,9 @@ import { resettableReducer } from 'reduxsauce'
 const resettable = resettableReducer('RESET')
 // combine all the reducers
 const rootReducers = {
-    user: resettable(UserReducer),
-    star: resettable(StarReducer),
-    search: SearchReducer,
-    productlist: ProductlistReducer,
+  user: resettable(UserReducer),
+  star: resettable(StarReducer),
+  search: SearchReducer,
+  productlist: ProductlistReducer,
 };
 export default rootReducers;

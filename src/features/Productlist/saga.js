@@ -1,14 +1,14 @@
 import { call, put, takeLatest, takeEvery, fork, select } from "redux-saga/effects";
 import * as Types from "./actionType";
 import { Actions } from "./action";
-import * as ProductlistApi from "../../apis/Productlist";
+import ProductlistApi from "../../apis/Productlist";
 import { getIndex, getCounts } from "./selector";
 
 export function* workGetlist({ payload }) {
   const req = {
-    name:payload,
-    index:yield select(getIndex),
-    counts:yield select(getCounts)
+    name: payload,
+    index: yield select(getIndex),
+    counts: yield select(getCounts)
   }
   try {
     console.log("saga: ProductlistApi.getlist:", req);

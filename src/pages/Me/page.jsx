@@ -12,7 +12,7 @@ class MePage extends Component {
       <div className='user-wrap'>
         <header><h2>Price Comparison<Link to={{ pathname: "/user/me" }} ><i className='btn-mine cur' /></Link></h2></header>
         <section className='user-main'>
-          <Me/>
+          <Me />
         </section>
         <Footer url={this.props.location} />
       </div>

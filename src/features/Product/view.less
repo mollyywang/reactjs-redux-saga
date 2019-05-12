@@ -1,51 +1,124 @@
-@import '../../styles/common.import.less';
+@import "../../styles/common.import.less";
 
-.product-con{
+.product-con {
+  position: relative;
+  height: 80px;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  margin: 0;
+  padding: 0;
+  background-color: #fff;
+
+  .tag {
+    top: 0;
+    border-bottom-left-radius: 2px;
+    border-bottom-right-radius: 2px;
+    left: 90px;
+    position: absolute;
+    z-index: 10;
+    width: 55px;
+    height: 20px;
+    background-size: 100% 100%;
+  }
+
+  .tag.ww {
+    background-image: url(../../styles/icon/logo-ww@2x.jpg);
+  }
+
+  .tag.coles {
+    background-image: url(../../styles/icon/logo-coles@2x.jpg);
+  }
+
+  .tag.ebay {
+    background-image: url(../../styles/icon/logo-ebay@2x.jpg);
+  }
+
+  .tag.amazon {
+    background-image: url(../../styles/icon/logo-amazon@2x.jpg);
+  }
+
+  .tag.kmart {
+    background-image: url(../../styles/icon/logo-kmart@2x.jpg);
+  }
+
+  .tag.target {
+    background-image: url(../../styles/icon/logo-target@2x.jpg);
+  }
+
+  .pic {
+    .bg-pic();
+    .size(80px, 80px);
+  }
+
+  .detail {
+    margin-top: 18px;
+    display: block;
     position: relative;
-    height: 80px;
-    display: -webkit-box;
-    display: -moz-box;
-    display: -ms-flexbox;
-    display: -webkit-flex;
-    display: flex;
-    margin:0;
-    padding:0 ;
-    background-color: #fff;
-    .tag{top: 0;border-bottom-left-radius: 2px;border-bottom-right-radius: 2px;
-        left: 90px;position: absolute;z-index: 10;width: 55px;height: 20px;background-size: 100% 100%;}
-    .tag.ww{background-image:url(../../styles/icon/logo-ww@2x.jpg)}
-    .tag.coles{background-image:url(../../styles/icon/logo-coles@2x.jpg)}
-    .tag.ebay{background-image:url(../../styles/icon/logo-ebay@2x.jpg)}
-    .tag.amazon{background-image:url(../../styles/icon/logo-amazon@2x.jpg)}
-    .tag.kmart{background-image:url(../../styles/icon/logo-kmart@2x.jpg)}
-    .tag.target{background-image:url(../../styles/icon/logo-target@2x.jpg)}
-    .pic{
-        .bg-pic();
-        .size(80px,80px)}
-    .detail{
-        margin-top: 18px;
-        display: block;position: relative;
-        -webkit-box-flex: 1;box-flex: 1;-ms-flex: 1;
-        -webkit-flex: 1;
-        flex: 1;min-width: 0;
-        padding-left: 10px;
-        p.name{margin-top: 8px; width: 200px; overflow: hidden;text-overflow: ellipsis;white-space: nowrap;display: inline-block;
-            color: #222222; margin-bottom: 0;padding-bottom: 6px;    opacity: 0.64; font-size: 14px;line-height: 14px;position: relative;}
-        p.name::after{    content: "";
-            position: absolute;
-            left: 0;
-            bottom: -1px;
-            height: 2px;
-            width: 24px;
-            background-color: #F2F4F7;}
-        .price{
-            font-family: 'DIN';margin-bottom: 0;
-            font-size: 16px;font-weight: bold; line-height: 16px;margin-top: 0;}
-        .btn-star{position: absolute;top: 10px;right: 8px;
-            i{display: inline-block;}
-            .star{height: 24px;width: 24px;background-image: url(../../styles/icon/tab-goods@2x.png);background-size: 100% 100%;}
-            .star.star-filled{background-image: url(../../styles/icon/tab-goods-cur@2x.png);}
-        }
-    }
-}
+    -webkit-box-flex: 1;
+    box-flex: 1;
+    -ms-flex: 1;
+    -webkit-flex: 1;
+    flex: 1;
+    min-width: 0;
+    padding-left: 10px;
 
+    p.name {
+      margin-top: 8px;
+      width: 200px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      display: inline-block;
+      color: #222222;
+      margin-bottom: 0;
+      padding-bottom: 6px;
+      opacity: 0.64;
+      font-size: 14px;
+      line-height: 14px;
+      position: relative;
+    }
+
+    p.name::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -1px;
+      height: 2px;
+      width: 24px;
+      background-color: #f2f4f7;
+    }
+
+    .price {
+      font-family: "DIN";
+      margin-bottom: 0;
+      font-size: 16px;
+      font-weight: bold;
+      line-height: 16px;
+      margin-top: 0;
+    }
+
+    .btn-star {
+      position: absolute;
+      top: 10px;
+      right: 8px;
+
+      i {
+        display: inline-block;
+      }
+
+      .star {
+        height: 24px;
+        width: 24px;
+        background-image: url(../../styles/icon/tab-goods@2x.png);
+        background-size: 100% 100%;
+      }
+
+      .star.star-filled {
+        background-image: url(../../styles/icon/tab-goods-cur@2x.png);
+      }
+    }
+  }
+}

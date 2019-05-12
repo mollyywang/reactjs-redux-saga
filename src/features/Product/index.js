@@ -1,1 +1,1 @@
-export {default as Product} from './container'
+export { default as Product } from './container'

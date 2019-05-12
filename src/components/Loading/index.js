@@ -1,1 +1,1 @@
-export {default as Loading } from './view'
+export { default as Loading } from './view'

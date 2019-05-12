@@ -1,12 +1,12 @@
 import { call, put, takeEvery, fork, select } from "redux-saga/effects";
 import { Actions } from "./action";
 import * as Types from "./actionType";
-import * as StarApi from "../../apis/Star";
+import StarApi from "../../apis/Star";
 import { getToken } from "../User/selector";
 
 export function* workGet({ payload }) {
   const req = {
-    token:yield select(getToken)
+    token: yield select(getToken)
   }
   try {
     console.log("saga: ", req);

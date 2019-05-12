@@ -1,3 +1,3 @@
 export function createAction(type, payload = {}) {
-  return {type, payload: payload}
+  return { type, payload: payload }
 }
