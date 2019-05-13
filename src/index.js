@@ -4,13 +4,14 @@ import { ConnectedRouter } from 'connected-react-router'
 import { Provider } from 'react-redux'
 
 import { PersistGate } from 'redux-persist/integration/react'
-import { App } from './pages/App'
+import App from './pages/App'
 import * as serviceWorker from './serviceWorker'
 import configureStore, { history } from './configStore'
 import './styles/index.less'
 
 
 const { store, persistor } = configureStore({})
+
 
 ReactDOM.render(
   <Provider store={store}>

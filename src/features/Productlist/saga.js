@@ -1,8 +1,8 @@
 import {
-  call, put, takeLatest, takeEvery, fork, select,
+  call, put, takeLatest, fork, select,
 } from 'redux-saga/effects'
 import * as Types from './actionType'
-import { Actions } from './action'
+import Actions from './action'
 import ProductlistApi from '../../apis/Productlist'
 import { getIndex, getCounts } from './selector'
 

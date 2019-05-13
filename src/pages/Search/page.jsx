@@ -1,7 +1,7 @@
 import React, { Component } from "react";
-import { Search } from "../../features/Search";
-import { Productlist } from "../../features/Productlist";
-import { Footer } from "../../components/Footer";
+import Search from "../../features/Search";
+import Productlist from "../../features/Productlist";
+import Footer from "../../components/Footer";
 import { Link } from "react-router-dom";
 import "./index.less";
 

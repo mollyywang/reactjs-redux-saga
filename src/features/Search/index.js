@@ -1,2 +1,5 @@
-export { default as Search } from './container'
+import Search from './container'
+
 export { default as SearchReducer } from './reducer'
+
+export default Search

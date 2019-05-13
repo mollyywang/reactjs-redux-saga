@@ -1,1 +1,3 @@
-export { default as Footer } from './view'
+import Footer from './view'
+
+export default Footer

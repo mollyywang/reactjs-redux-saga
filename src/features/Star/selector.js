@@ -12,3 +12,5 @@ export function getProcessing(state) {
 export function getItems(state) {
   return state.star.items
 }
+
+export default {}

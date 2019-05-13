@@ -1,1 +1,3 @@
-export { default as Loading } from './view'
+import Loading from './view'
+
+export default Loading

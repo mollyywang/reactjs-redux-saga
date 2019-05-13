@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-import { User } from "../../features/User";
-import { Footer } from "../../components/Footer";
+import User from "../../features/User/container";
+import Footer from "../../components/Footer";
 import { Link } from "react-router-dom";
 import "./index.less";
 

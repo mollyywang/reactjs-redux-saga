@@ -11,7 +11,7 @@ const INITIAL_STATE = {
 
 function handleIndexReset(state = INITIAL_STATE) {
   console.log('reset----------')
-  return INITIAL_STATE
+  return state
 }
 
 function handleGetlistRequest(state = INITIAL_STATE, { payload }) {

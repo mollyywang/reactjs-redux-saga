@@ -18,3 +18,5 @@ export function getProcessing(state) {
 export function getProduct(state, props) {
   return state.productlist.find(item => item.id === props.id)
 }
+
+export default {}

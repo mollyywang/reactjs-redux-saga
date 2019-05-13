@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import PropTypes from "prop-types";
 import { Spin, Button } from 'antd';
 import { Link } from 'react-router-dom'
-import { Product } from '../Product';
+import Product from '../Product';
 
 import "./view.less";
 
@@ -21,6 +21,7 @@ class Star extends Component {
 
   componentDidMount() {
     const { actions, isLogin } = this.props;
+    console.log(isLogin);
     if (isLogin) {
       actions.getStar_request();
     }

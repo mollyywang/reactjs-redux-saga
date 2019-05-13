@@ -1,1 +1,3 @@
-export { default as Me } from './container'
+import Me from './container'
+
+export default Me

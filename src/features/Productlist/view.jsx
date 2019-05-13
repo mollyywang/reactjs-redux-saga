@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import PropTypes from "prop-types";
 import { debounce } from '../../utils/UiUtil'
 import { Spin } from 'antd';
-import { Product } from '../Product'
+import Product from '../Product'
 import "./view.less";
 
 class Productlist extends Component {

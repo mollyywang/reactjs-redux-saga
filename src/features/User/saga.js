@@ -1,7 +1,7 @@
 import {
   call, put, takeEvery, fork,
 } from 'redux-saga/effects'
-import { Actions } from './action'
+import Actions from './action'
 import * as Types from './actionType'
 import UserApi from '../../apis/User'
 

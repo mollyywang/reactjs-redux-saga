@@ -1,6 +1,6 @@
-import React, { Component } from "react";
-import { Me } from "../../features/Me";
-import { Footer } from '../../components/Footer'
+import React, { Component } from 'react';
+import Me from "../../features/Me";
+import Footer from '../../components/Footer'
 import { Link } from 'react-router-dom'
 
 import './index.less'

@@ -1,12 +1,12 @@
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
 import productCom from './view'
-import { Actions as StarActions } from '../Star/action'
+import StarActions from '../Star/action'
 import { isInStar } from '../Star/selector'
 import { getIsLogin } from '../User/selector'
 
 const mapStateToProps = (state, props) => ({
-  isLogin: getIsLogin(state),
+  isLogin: getIsLogin(state, props),
   isInStar: isInStar(state, props),
 })
 

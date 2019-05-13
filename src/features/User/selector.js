@@ -14,3 +14,5 @@ export function getProcessing(state) {
 export function getMsg(state) {
   return state.user.msg
 }
+
+export default {}

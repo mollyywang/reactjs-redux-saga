@@ -2,12 +2,12 @@ import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
 import Me from './view'
 import { getIsLogin, getName, getToken } from '../User/selector'
-import { Actions as UserActions } from '../User/action'
+import UserActions from '../User/action'
 
 const mapStateToProps = (state, props) => ({
-  isLogin: getIsLogin(state),
-  username: getName(state),
-  token: getToken(state),
+  isLogin: getIsLogin(state, props),
+  username: getName(state, props),
+  token: getToken(state, props),
 })
 
 const Actions = {// user others actions

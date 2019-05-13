@@ -1,17 +1,17 @@
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
 import userForm from './view'
-import { Actions } from './action'
+import Actions from './action'
 import {
   getIsLogin, getName, getToken, getProcessing, getMsg,
 } from './selector'
 
 const mapStateToProps = (state, props) => ({
-  isLogin: getIsLogin(state),
-  username: getName(state),
-  processing: getProcessing(state),
-  token: getToken(state),
-  msg: getMsg(state),
+  isLogin: getIsLogin(state, props),
+  username: getName(state, props),
+  processing: getProcessing(state, props),
+  token: getToken(state, props),
+  msg: getMsg(state, props),
 })
 
 const mapDispatchToProps = dispatch => ({

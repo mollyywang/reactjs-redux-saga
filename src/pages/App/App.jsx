@@ -4,7 +4,7 @@ import MePage from "../Me";
 import UserPage from "../User";
 import SearchPage from "../Search";
 import StarPage from "../Star";
-import { userIsAuthenticated } from "../../utils/AuthUtil";
+import userIsAuthenticated from "../../utils/AuthUtil";
 import './App.less'
 
 

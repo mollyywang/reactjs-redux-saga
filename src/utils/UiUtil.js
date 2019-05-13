@@ -1,4 +1,3 @@
-
 export function debounce(fn, wait, options) {
   wait = wait || 0
   let timerId
@@ -13,3 +12,5 @@ export function debounce(fn, wait, options) {
   }
   return debounced
 }
+
+export default ''

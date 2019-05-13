@@ -1,7 +1,6 @@
 import { connectedRouterRedirect } from 'redux-auth-wrapper/history4/redirect'
 
-
-export const userIsAuthenticated = connectedRouterRedirect({
+const userIsAuthenticated = connectedRouterRedirect({
   // The url to redirect user to if they fail
   redirectPath: '/user/login',
   // If selector is true, wrapper will not redirect
@@ -10,3 +9,5 @@ export const userIsAuthenticated = connectedRouterRedirect({
   // A nice display name for this check
   wrapperDisplayName: 'UserIsAuthenticated',
 })
+
+export default userIsAuthenticated

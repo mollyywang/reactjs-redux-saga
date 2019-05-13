@@ -1,18 +1,13 @@
 import {
   call, put, takeEvery, fork, select,
 } from 'redux-saga/effects'
-import { Actions } from './action'
+import Actions from './action'
 import * as Types from './actionType'
 import StarApi from '../../apis/Star'
-import { getToken } from '../User/selector'
 
-export function* workGet({ payload }) {
-  const req = {
-    token: yield select(getToken),
-  }
+export function* workGet() {
   try {
-    console.log('saga: ', req)
-    const response = yield call(StarApi.getlist, req)// 调用异步函数
+    const response = yield call(StarApi.getlist)// 调用异步函数
     console.log(response)
     if (response.data.code === 0) {
       yield put(Actions.getStar_success(response.data.data))// 等于dispatch
