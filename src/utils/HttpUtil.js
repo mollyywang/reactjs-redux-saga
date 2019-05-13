@@ -6,17 +6,15 @@ const http = axios.create({
 
 http.interceptors.request.use(
   (config) => {
+    const newConfig = config
     const jsonStr = localStorage.getItem('persist:root')
     console.log(jsonStr)
     const user = JSON.parse(JSON.parse(jsonStr).user)
     const token = user.token || ''
-    config.headers.Authorization = `Bearer ${token}`
-    return config
+    newConfig.headers.Authorization = `Bearer ${token}`
+    return newConfig
   },
-  error =>
-    // Do something with request error
-    Promise.reject(error),
-
+  error => Promise.reject(error),
 )
 
 

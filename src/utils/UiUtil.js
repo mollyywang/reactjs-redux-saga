@@ -1,5 +1,5 @@
-export function debounce(fn, wait, options) {
-  wait = wait || 0
+export function debounce(fn, waitTime, options) {
+  const wait = waitTime || 0
   let timerId
   function debounced() {
     if (timerId) {

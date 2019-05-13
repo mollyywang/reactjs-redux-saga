@@ -1,5 +1,6 @@
-import { default as Star } from './container'
-export { default as StarReducer } from './reducer'
-export { default as StarSaga } from './saga'
+import Star from './container'
+import StarReducer from './reducer'
+import StarSaga from './saga'
 
 export default Star
+export { StarReducer, StarSaga }

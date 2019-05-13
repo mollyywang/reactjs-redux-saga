@@ -1,6 +1,6 @@
 
 // selectors
-export function getName(state, props) {
+export function getName(state) {
   return state.search.name
 }
 

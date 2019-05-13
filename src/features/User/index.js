@@ -1,6 +1,7 @@
-import { default as User } from './container'
+import User from './container'
 
-export { default as UserReducer } from './reducer'
-export { default as UserSaga } from './saga'
+import UserReducer from './reducer'
+import UserSaga from './saga'
 
 export default User
+export { UserReducer, UserSaga }

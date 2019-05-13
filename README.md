@@ -1,68 +1,90 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# A shopping web app based reactjs,redux and antd. 基于reactjs和redux的购物网站单页应用。
+ This is a shopping web application developped with reactjs, redux-thunk, axios and antd. 这是一个使用reactjs,redux-thunk,axios 和 antd 等的单页网页应用。
 
-## Available Scripts
+**There is a another version of this application but developped with `redux-saga` and a better structure. See more info:(https://github.com/SoloistWang/reactjs-redux-saga)**
+**还有另外一个使用`redux-saga`，文件夹架构优化的版本，欢迎参考。**
 
-In the project directory, you can run:
+This project was developed with [Create React App].See more info (https://github.com/facebook/create-react-app).
+项目使用`Create React App`构建。
 
-### `npm start`
+## 1. Setting up. 项目开始。
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Clone this repo and adjust details in `package.json`. Remove the `.git` directory and `git init` to start fresh.
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
+克隆这个仓库，调整适合自己项目的`package.json`，移除`.git`文件并使用`git init`来初始化。
 
-### `npm test`
+```bash
+git clone https://github.com/SoloistWang/reactjs-redux-antd.git
+```
 
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## 2. Config package.json. 包配置。
 
-### `npm run build`
+- [`antd`] An enterprise-class UI design language. 企业级设计组件库。
+- [`axios`] Promise based HTTP client. 处理HTTP请求。
+- [`babel-plugin-import`] Modular import plugin for babe. Babel模块化导入组件。
+- [`less`] The dynamic stylesheet language. 动态样式语言。
+- [`react-app-rewired`] Tweak the create-react-app webpack config(s). 调整webpack配置。
+- [`redux`]  a predictable state container for JavaScript apps. 应用状态容器
+- [`react-router`] Declarative routing for React. 声明路由。
 
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
+run `yarn install` to install the dependencies
+运行 `yarn install` 来加载依赖包
 
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
+```bash
+yarn install
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## 3. Directory structurem. 目录架构。
+- `node_modules` Dependency package. 依赖包。
+- `public`: Static source. 静态资源。
+- `src`: App source. 项目源码。
+  - `actions`: action creators and selectors. 定义动作和选择器。
+  - `components`: static components. 静态组件。
+  - `connectors`: component connectors. 连接器。
+  - `pages`: views. 页面。
+  - `reducers`: Receive antions then change state. 根据收到的动作改变状态。
+  - `styles`: CSS, Less, and Icons. 样式文件。
+  - `util`: Common and general functions. 基础和全局函数。
+- config-overrides.js:Personal config. 个人设置。
 
-### `npm run eject`
+## 4. Using `yarn` scripts. 使用 `yarn` 运行脚本。
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+- Start the app in development mode. 测试环境运行项目。
+```bash
+yarn start
+```
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- Compile the app. Files are emitted to `dist`. 编译项目，文件导出到`dist`文件夹。
+```bash
+yarn build 
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+- Runs tests. 运行测试脚本。
+```bash
+yarn test 
+```
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+## 5. Running App. 运行应用。
 
-## Learn More
+Using the `redux-devtools-extension` first. 使用redux浏览器扩展插件。
+Click to download the extension.
+<a href="https://chrome.google.com/webstore/detail/redux-devtools/lmhkpmbekcpmknklioeibfkpmmfibljd">![redux-devtools](images/redux-dev.png)</a>
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+**Before running the app,visit this repo to get the backstage code and run the server, so you can use api.See more info https://github.com/SoloistWang/koa2-mongodb-jwt-server 运行应用之前建议下载后台代码并打开服务器，保证接口顺利运行。**
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+ Visit local website.
+ http://localhost:3000/search
 
-### Code Splitting
+ ### test search page
+![search](images/search.png)
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+ ### test login page
+![login](images/login.png)
 
-### Analyzing the Bundle Size
+ ### test user page
+![user](images/user.png)
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
+ ### test star page
+![star](images/star.png)
 
-### Making a Progressive Web App
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
