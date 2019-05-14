@@ -8,7 +8,6 @@ class Product extends Component {
   }
 
   componentDidUpdate = () => {
-    //
   }
 
   componentDidMount() {

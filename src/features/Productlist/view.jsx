@@ -15,12 +15,11 @@ class Productlist extends Component {
   }
 
   componentDidUpdate = () => {
-    //
   }
 
   componentDidMount() {
     this.handleScroll = this.handleScroll.bind(this)
-    //监听下拉加载
+    //listen scroll and load 监听下拉加载
     const pro = this.refs.productlist;
     let fn = debounce(this.handleScroll, 100, pro);
     pro.addEventListener('touchmove', fn);
@@ -33,7 +32,7 @@ class Productlist extends Component {
       return false;
     }
 
-    //翻页 loading
+    //next page 翻页
     if (dom.scrollHeight - dom.scrollTop - dom.offsetHeight < 100) {
       if (index >= allNums) {
         console.log('processing end')

@@ -19,7 +19,7 @@ class App extends Component {
           <Route exact path="/search" component={SearchPage} />
           <Route exact path="/search/:key" component={SearchPage} />
           <Route exact path="/user/login" component={UserPage} />
-          {/* 没登录不允许访问 */}
+          {/* the page "/user/me" must login before visit */}
           <Route exact path="/user/me" component={userIsAuthenticated(MePage)} />
           <Route exact path="/star" component={StarPage} />
         </Switch>

@@ -7,6 +7,7 @@ const INITIAL_STATE = {
 }
 
 function handleAddStar(state = INITIAL_STATE, { payload }) {
+  // actually you should send the reauest to the server ,but here just save locally
   console.log('add handleAddStar', payload)
   return {
     ...state,
@@ -15,6 +16,7 @@ function handleAddStar(state = INITIAL_STATE, { payload }) {
 }
 
 function handleRemoveStar(state = INITIAL_STATE, { payload }) {
+  // actually you should send the reauest to the server ,but here just save locally
   console.log('remove handleRemoveStar', payload)
   return {
     ...state,

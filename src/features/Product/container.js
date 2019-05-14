@@ -10,7 +10,7 @@ const mapStateToProps = (state, props) => ({
   isInStar: isInStar(state, props),
 })
 
-const Actions = {// user others actions
+const Actions = {//actions from other features
   removeStar_request: StarActions.removeStar_request,
   addStar_request: StarActions.addStar_request,
 }

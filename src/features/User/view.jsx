@@ -17,9 +17,6 @@ class User extends Component {
 
   componentDidMount() {
     this.handleSubmit = this.handleSubmit.bind(this)
-
-    // const { logout } = this.props
-    // logout();
   }
 
   handleSubmit(e) {
@@ -29,7 +26,7 @@ class User extends Component {
         console.log("Received values of form: ", values);
         const { actions } = this.props;
         try {
-          let res = actions.request({
+          actions.request({
             username: values.username,
             password: values.password
           })

@@ -27,7 +27,8 @@ http.interceptors.response.use(
     if (isTokenExpiredError(errorResponse)) {
       localStorage.clear();
       window.location.reload();
-      //https://www.techynovice.com/setting-up-JWT-token-refresh-mechanism-with-axios/
+      // if you want to refresh the token from the server,see the following guide:
+      // https://www.techynovice.com/setting-up-JWT-token-refresh-mechanism-with-axios/
     }
     // If the error is due to other reasons, we just throw it back to axios
     return Promise.reject(error)
