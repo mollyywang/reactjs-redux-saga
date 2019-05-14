@@ -8,9 +8,9 @@ this project contains the following optimizations:相比前一个版本，这个
 - 3.Using `react-loadable` to load components with dynamic imports. 动态加载路由模块。
 - 4.Using `reduxsauce` to handle reducers. 使用reducers工具管理actions。
 - 5.Using `redux-saga` to fetch data asynchronously. 异步获取数据。
-- 6.Using `eslint` to make code better. 代码规范。
+- 6.Using `eslint` to make code better. 检查代码，规范代码。
 - 7.Using `redux-persist` to persisted state. 记录和保持状态
-- 8.Using `redux-auth-wrapper` to handle authentication globally. 统一处理用户身份认证**
+- 8.Using `redux-auth-wrapper` to handle authentication globally. 统一处理用户身份认证
 
 ## 1. Setting up. 项目开始。
 
