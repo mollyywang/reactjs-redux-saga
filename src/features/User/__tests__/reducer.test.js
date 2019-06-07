@@ -1,25 +1,27 @@
 import Reducer from '../reducer'
 import * as Types from '../actionType'
-import { statement } from '@babel/template';
 
 const INITIAL_STATE = {
-    items: [],
-    counts: 16,
-    index: 0,
-    allNums: 0,
+    username: '',
+    token: '',
     processing: false,
+    isLogin: false,
+    msg: '',
 }
 
-describe('todos reducer', () => {
+describe('User reducer', () => {
     it('should return the initial state', () => {
         expect(Reducer(undefined, {})).toEqual(INITIAL_STATE)
     })
 
-    it('should handle GETLIST_REQUEST', () => {
+    it('should handle LOGIN_REQUEST', () => {
         expect(
             Reducer(INITIAL_STATE, {
-                type: Types.GETLIST_REQUEST,
-                payload: { name: 'product name' }
+                type: Types.LOGIN_REQUEST,
+                payload: {
+                    username: 'wang',
+                    password: '33'
+                }
             })
         ).toEqual({
             ...INITIAL_STATE,
@@ -27,44 +29,35 @@ describe('todos reducer', () => {
         })
     })
 
-    it('should handle GETLIST_SUCCESS', () => {
+    it('should handle LOGIN_SUCCESS', () => {
         expect(
             Reducer(INITIAL_STATE, {
-                type: Types.GETLIST_SUCCESS,
+                type: Types.LOGIN_SUCCESS,
                 payload: {
-                    productData: [],
-                    allNums: 124,
+                    username: 'wang',
+                    token: 'esdlfhosfsjjlfs',
                 }
             })
         ).toEqual({
             ...INITIAL_STATE,
-            index: 16,
-            processing: false,
-            allNums: 124,
-            items: [],
+            username: 'wang',
+            token: 'esdlfhosfsjjlfs',
+            isLogin: true,
+            processing: false
         })
     })
 
     it('should handle GETLIST_FAILURE', () => {
         expect(
             Reducer(INITIAL_STATE, {
-                type: Types.GETLIST_FAILURE,
+                type: Types.LOGIN_FAILURE,
                 payload: { error: 'this is an error msg' }
             })
         ).toEqual({
             ...INITIAL_STATE,
+            isLogin: false,
             processing: false,
-        })
-    })
-
-    it('should handle RESET_INDEX', () => {
-        expect(
-            Reducer(INITIAL_STATE, {
-                type: Types.RESET_INDEX,
-                payload: {}
-            })
-        ).toEqual({
-            ...INITIAL_STATE
+            msg: 'login fail, username or password is wrong !',
         })
     })
 })

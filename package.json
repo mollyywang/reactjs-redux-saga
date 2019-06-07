@@ -5,7 +5,6 @@
   "dependencies": {
     "antd": "^3.15.0",
     "axios": "^0.18.0",
-    "babel-jest": "^24.8.0",
     "babel-plugin-import": "^1.11.0",
     "connected-react-router": "^6.0.0",
     "customize-cra": "^0.2.12",
@@ -36,8 +35,8 @@
   "scripts": {
     "start": "react-app-rewired start",
     "build": "react-app-rewired build",
-    "test": "jest",
-    "test:watch": "npm test -- --watch",
+    "test": "react-scripts test",
+    "test:watch": "react-scripts  test -- --watch",
     "eject": "react-scripts eject",
     "lint": "eslint --ext .js src"
   },
@@ -55,8 +54,5 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  },
-  "devDependencies": {
-    "jest": "^24.8.0"
   }
 }
