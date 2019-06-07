@@ -5,9 +5,12 @@
   "dependencies": {
     "antd": "^3.15.0",
     "axios": "^0.18.0",
+    "babel-jest": "^24.8.0",
     "babel-plugin-import": "^1.11.0",
     "connected-react-router": "^6.0.0",
     "customize-cra": "^0.2.12",
+    "enzyme": "^3.10.0",
+    "enzyme-adapter-react-16": "^1.14.0",
     "eslint": "^5.16.0",
     "eslint-config-airbnb": "^17.1.0",
     "eslint-loader": "^2.1.2",
@@ -33,7 +36,8 @@
   "scripts": {
     "start": "react-app-rewired start",
     "build": "react-app-rewired build",
-    "test": "react-app-rewired test",
+    "test": "jest",
+    "test:watch": "npm test -- --watch",
     "eject": "react-scripts eject",
     "lint": "eslint --ext .js src"
   },
@@ -51,5 +55,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "jest": "^24.8.0"
   }
 }
