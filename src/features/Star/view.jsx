@@ -11,17 +11,11 @@ class Star extends Component {
     items: []
   }
 
-  static contextTypes = {
-    router: PropTypes.object.isRequired,
-  }
-
   componentDidUpdate = () => {
-    //
   }
 
   componentDidMount() {
     const { actions, isLogin } = this.props;
-    console.log(isLogin);
     if (isLogin) {
       actions.getStar_request();
     }

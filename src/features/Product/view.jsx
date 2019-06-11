@@ -20,7 +20,7 @@ class Product extends Component {
   }
 
   confirm = () => {
-    this.handleStarClick();///
+    this.handleStarClick();
   }
 
   isDoDelete = (typeS, isInStar) => {

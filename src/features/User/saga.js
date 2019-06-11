@@ -5,8 +5,9 @@ import Actions from './action'
 import * as Types from './actionType'
 import UserApi from '../../apis/User'
 
-export function* workLogin({ payload }) {
+export function* workLogin(loginRequest) {
   try {
+    const payload = loginRequest.payload
     console.log('saga: ', payload)
     const response = yield call(UserApi.login, payload)// handle functions asynchronously
     console.log(response)
