@@ -1,5 +1,6 @@
 import React from 'react'
-import Enzyme, { shallow, mount } from 'enzyme'
+import { BrowserRouter as Router } from 'react-router-dom';
+import Enzyme, { shallow, mount, render } from 'enzyme'
 import Adapter from 'enzyme-adapter-react-16';
 import Search from '../view'
 
@@ -14,8 +15,7 @@ function setup() {
             productsreset:jest.fn()
         }
     }
-    const enzymeWrapper = shallow(<Search {...props} />)
-    //that is a question ,use shallow,render or mount
+    const enzymeWrapper = shallow(<Router><Search {...props} /></Router>)
     return {
         props,
         enzymeWrapper,
@@ -23,13 +23,12 @@ function setup() {
 }
 
 describe('components', () => {
-    describe('Product', () => {
+    describe('Search', () => {
         it('should render self and subcomponents', () => {
             const { enzymeWrapper, props } = setup()
-            // console.log(enzymeWrapper)
-            // console.log(props)
+            expect(enzymeWrapper.find(Search).props()).toMatchObject(props)
+            expect(enzymeWrapper.find(Search).exists()).toBe(true)
         })
-
     })
 })
 

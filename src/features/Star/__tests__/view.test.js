@@ -1,5 +1,6 @@
 import React from 'react'
-import Enzyme, { shallow, mount } from 'enzyme'
+import { BrowserRouter as Router } from 'react-router-dom';
+import Enzyme, { shallow, mount, render } from 'enzyme'
 import Adapter from 'enzyme-adapter-react-16';
 import Star from '../view'
 
@@ -30,7 +31,7 @@ function setup() {
             addStar_request: jest.fn()
         }
     }
-    const enzymeWrapper = shallow(<Star {...props} />)
+    const enzymeWrapper = shallow(<Router><Star {...props} /></Router>)
     //that is a question ,use shallow,render or mount
     return {
         props,
@@ -39,13 +40,12 @@ function setup() {
 }
 
 describe('components', () => {
-    describe('Product', () => {
+    describe('Search', () => {
         it('should render self and subcomponents', () => {
             const { enzymeWrapper, props } = setup()
-            // console.log(enzymeWrapper)
-            // console.log(props)
+            expect(enzymeWrapper.find(Star).props()).toMatchObject(props)
+            expect(enzymeWrapper.find(Star).exists()).toBe(true)
         })
-
     })
 })
 

@@ -31,10 +31,9 @@ describe('components', () => {
     describe('Product', () => {
         it('should render self and subcomponents', () => {
             const { enzymeWrapper, props } = setup()
-            // console.log(enzymeWrapper)
-            // console.log(props)
+            expect(enzymeWrapper.find(Product).props()).toMatchObject(props)
+            expect(enzymeWrapper.find('.product-con').exists()).toBe(true)
         })
-
     })
 })
 

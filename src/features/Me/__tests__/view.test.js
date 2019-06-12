@@ -1,5 +1,6 @@
 import React from 'react'
-import Enzyme, { shallow, mount } from 'enzyme'
+import { BrowserRouter as Router } from 'react-router-dom';
+import Enzyme, { shallow, mount, render } from 'enzyme'
 import Adapter from 'enzyme-adapter-react-16';
 import Me from '../view'
 
@@ -9,7 +10,11 @@ function setup() {
     const props = {
         username: 'wang'
     }
-    const enzymeWrapper = shallow(<Me {...props} />)
+    const enzymeWrapper = mount(
+    <Router>
+    <Me {...props} >
+        <section></section>
+    </Me></Router>)
     //that is a question ,use shallow,render or mount
     return {
         props,
@@ -18,13 +23,12 @@ function setup() {
 }
 
 describe('components', () => {
-    describe('Product', () => {
+    describe('Me', () => {
         it('should render self and subcomponents', () => {
             const { enzymeWrapper, props } = setup()
-            // console.log(enzymeWrapper)
-            // console.log(props)
+            expect(enzymeWrapper.find(Me).props()).toMatchObject(props)
+            expect(enzymeWrapper.find('.user-detail').exists()).toBe(true)
         })
-
     })
 })
 

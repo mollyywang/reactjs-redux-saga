@@ -19,7 +19,7 @@ function setup() {
         },
         msg: 'message',
     }
-    const enzymeWrapper = shallow(<User {...props} />)
+    const enzymeWrapper = mount(<User {...props} />)
     //that is a question ,use shallow,render or mount
     return {
         props,
@@ -28,13 +28,12 @@ function setup() {
 }
 
 describe('components', () => {
-    describe('Product', () => {
+    describe('User', () => {
         it('should render self and subcomponents', () => {
             const { enzymeWrapper, props } = setup()
-            // console.log(enzymeWrapper)
-            // console.log(props)
+            expect(enzymeWrapper.find(User).props()).toMatchObject(props)
+            expect(enzymeWrapper.find('.login-form').exists()).toBe(true)
         })
-
     })
 })
 
