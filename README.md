@@ -12,7 +12,7 @@ this project contains the following optimizations:相比前一个版本，这个
 - 7.Using `redux-persist` to persisted state. 记录和保持状态
 - 8.Using `redux-auth-wrapper` to handle authentication globally. 统一处理用户身份认证
 
-## 1. Setting up. 项目开始。
+## 1. Setting up. 
 
 Clone this repo and adjust details in `package.json`. Remove the `.git` directory and `git init` to start fresh.
 
@@ -22,7 +22,7 @@ Clone this repo and adjust details in `package.json`. Remove the `.git` director
 git clone https://github.com/SoloistWang/reactjs-redux-saga.git
 ```
 
-## 2. Config package.json. 包配置。
+## 2. Config package.json. 
 
 - [`antd`] An enterprise-class UI design language. 企业级设计组件库。
 - [`axios`] Promise based HTTP client. 处理HTTP请求。
@@ -44,7 +44,7 @@ run `yarn install` to install the dependencies
 yarn install
 ```
 
-## 3. Directory structurem. 目录架构。
+## 3. Directory structurem. 
 - `node_modules` Dependency package. 依赖包。
 - `public`: Static source. 静态资源。
 - `src`: App source. 项目源码。
@@ -58,7 +58,7 @@ yarn install
   - `utils`: Common and general functions. 基础和全局函数。
 - config-overrides.js:Personal config. 个人设置。
 
-## 4. Using `yarn` scripts. 使用 `yarn` 运行脚本。
+## 4. Using `yarn` scripts. 
 
 - Start the app in development mode. 测试环境运行项目。
 ```bash
@@ -80,7 +80,7 @@ yarn test
 npm run lint 
 ```
 
-## 5. Running App. 运行应用。
+## 5. Running App. 
 
 Using the `redux-devtools-extension` first. 使用redux浏览器扩展插件。
 Click to download the extension.
