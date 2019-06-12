@@ -6,9 +6,9 @@ import Actions from './action'
 import ProductlistApi from '../../apis/Productlist'
 import { getIndex, getCounts } from './selector'
 
-export function* workGetlist({ payload }) {
+export function* workGetlist(getlistRequest) {
   const req = {
-    name: payload,
+    name: getlistRequest.payload,
     index: yield select(getIndex),
     counts: yield select(getCounts),
   }
