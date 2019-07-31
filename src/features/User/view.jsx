@@ -1,62 +1,57 @@
-import React, { Component } from "react";
-import PropTypes from "prop-types";
+import React, { Component } from 'react'
+import PropTypes from 'prop-types'
 import { Redirect } from 'react-router'
-import { Form, Icon, Input, Button, Checkbox, Spin } from "antd";
-import "./view.less";
+import {
+  Form, Icon, Input, Button, Checkbox, Spin,
+} from 'antd'
+import './view.less'
 
 class User extends Component {
-
-  static defaultProps = {
-    username: '',
-    token: '',
-  }
-
-  componentDidUpdate = () => {
-    //
-  }
-
   componentDidMount() {
     this.handleSubmit = this.handleSubmit.bind(this)
   }
 
   handleSubmit(e) {
-    e.preventDefault();
-    this.props.form.validateFields(async (err, values) => {
+    e.preventDefault()
+    const { form } = this.props
+    form.validateFields(async (err, values) => {
       if (!err) {
-        console.log("Received values of form: ", values);
-        const { actions } = this.props;
+        console.log('Received values of form: ', values)
+        const { actions } = this.props
         try {
           actions.request({
             username: values.username,
-            password: values.password
+            password: values.password,
           })
         } catch (error) {
         }
       }
-    });
-  };
+    })
+  }
 
   render() {
-    const { isLogin, processing, msg } = this.props
-    const { getFieldDecorator } = this.props.form;
+    const {
+      isLogin, processing, msg, form,
+    } = this.props
+    const { getFieldDecorator } = form
     if (isLogin) {
-      return (<Redirect to="/user/me" />)
+      return (<Redirect to='/user/me' />)
     }
     return (
-      <Spin tip="logining..." spinning={processing}>
-        <Form onSubmit={this.handleSubmit} className="login-form">
+      <Spin tip='logining...' spinning={processing}>
+        <Form onSubmit={this.handleSubmit} className='login-form'>
           <Form.Item>
             {getFieldDecorator('username', {
               rules: [{ required: true, message: 'Please input your username!' }],
             })(
-              <Input prefix={<Icon type="user" style={{ color: 'rgba(0,0,0,.25)' }} />} placeholder="Username" />
+              <Input prefix={<Icon type='user' style={{ color: 'rgba(0,0,0,.25)' }} />} placeholder='Username' />,
             )}
           </Form.Item>
           <Form.Item>
             {getFieldDecorator('password', {
               rules: [{ required: true, message: 'Please input your Password!' }],
             })(
-              <Input prefix={<Icon type="lock" style={{ color: 'rgba(0,0,0,.25)' }} />} type="password" placeholder="Password" />
+              <Input prefix={<Icon type='lock' style={{ color: 'rgba(0,0,0,.25)' }} />} type='password' placeholder='Password' />,
             )}
           </Form.Item>
           <Form.Item>
@@ -64,29 +59,29 @@ class User extends Component {
               valuePropName: 'checked',
               initialValue: true,
             })(
-              <Checkbox>Remember me</Checkbox>
+              <Checkbox>Remember me</Checkbox>,
             )}
-            <a className="login-form-forgot" href="#">Forgot password</a>
-            <Button type="primary" htmlType="submit" className="login-form-button">
+            <a className='login-form-forgot' href='/'>Forgot password</a>
+            <Button type='primary' htmlType='submit' className='login-form-button'>
               Log in
-                </Button>
-            Or <a href="#">register now!</a>
+            </Button>
+            Or <a href='////'>register now!</a>
 
           </Form.Item>
-          <p className="remind">{msg}</p>
+          <p className='remind'>{msg}</p>
         </Form>
-      </Spin>)
+      </Spin>
+    )
   }
 }
 
 User.propTypes = {
-  username: PropTypes.string,
-  token: PropTypes.string,
+  form: PropTypes.object.isRequired,
   processing: PropTypes.bool.isRequired,
   isLogin: PropTypes.bool.isRequired,
   actions: PropTypes.object.isRequired,
   msg: PropTypes.string.isRequired,
-};
+}
 
-const userForm = Form.create({ name: "normal_login" })(User);
-export default userForm;
+const userForm = Form.create({ name: 'normal_login' })(User)
+export default userForm

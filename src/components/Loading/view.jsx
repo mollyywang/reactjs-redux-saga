@@ -1,22 +1,20 @@
-import React, { Component } from "react";
+import React, { Fragment } from 'react'
+import PropTypes from 'prop-types'
 
-class Loading extends Component {
-
-  constructor(props) {
-    super(props)
-  }
-
-  render() {
-    const { error, pastDelay } = this.props;
-    if (error) {
-      return (<div>Error!</div>);
-    } else if (pastDelay) {
-      return (<div>Loading...</div>);
-    } else {
-      return null;
-    }
-  }
+function Loading({ error = '', pastDelay = false }) {
+  return (
+    <Fragment>
+      {error && <div>Error!</div>}
+      {pastDelay && <div>Loading...</div>}
+    </Fragment>
+  )
+}
+Loading.defaultProps = {
+  error: '',
+}
+Loading.propTypes = {
+  error: PropTypes.string,
+  pastDelay: PropTypes.bool.isRequired,
 }
 
-
-export default Loading;
+export default Loading

@@ -17,25 +17,25 @@ http.interceptors.request.use(
   error => Promise.reject(error),
 )
 
+function isTokenExpiredError(errorResponse) {
+  return errorResponse.status === 401
+}
+
 http.interceptors.response.use(
-  function(response) {
-    // If the request succeeds, we don't have to do anything and just return the response
-    return response
-  },
-  function(error) {
+  // If the request succeeds, we don't have to do anything and just return the response
+  response => response,
+  (error) => {
     const errorResponse = error.response
     if (isTokenExpiredError(errorResponse)) {
-      localStorage.clear();
-      window.location.reload();
+      localStorage.clear()
+      window.location.reload()
       // if you want to refresh the token from the server,see the following guide:
       // https://www.techynovice.com/setting-up-JWT-token-refresh-mechanism-with-axios/
     }
     // If the error is due to other reasons, we just throw it back to axios
     return Promise.reject(error)
-  }
+  },
 )
-function isTokenExpiredError(errorResponse) {
-  return errorResponse.status === 401
-}
+
 
 export default http
