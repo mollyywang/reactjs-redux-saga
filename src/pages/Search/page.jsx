@@ -11,7 +11,7 @@ class SearchPage extends Component {
       <div className="search-wrap">
         <header>
           <h2>
-            Price Comparison
+            购物比价网站
             <Link to={{ pathname: "/user/me" }}>
               <i className="btn-mine" />
             </Link>

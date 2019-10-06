@@ -10,7 +10,7 @@ class UserPage extends Component {
       <div className="user-wrap">
         <header>
           <h2>
-            Price Comparison
+            登录页面
             <Link to={{ pathname: "/user/me" }}>
               <i className="btn-mine cur" />
             </Link>

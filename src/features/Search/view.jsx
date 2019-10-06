@@ -49,9 +49,9 @@ class Search extends Component {
 
   searchDetail = (name, allNums) => {
     if (allNums === 0) {
-      return ('Find the best deal!')
+      return ('找到最便宜的商品')
     } else {
-      return (<span className="search-detail"><b>{allNums}</b> results of <b>{name}</b></span>)
+      return (<span className="search-detail">有<b>{allNums}</b> 个结果，关于 <b>{name}</b></span>)
     }
   }
 
@@ -65,13 +65,13 @@ class Search extends Component {
             {getFieldDecorator('name', {
               rules: [{ required: true, message: 'Please input your product name!' }],
             })(
-              <Input prefix={<Icon type="search" style={{ color: 'rgba(0,0,0,.25)' }} />} placeholder="product name" />
+              <Input prefix={<Icon type="search" style={{ color: 'rgba(0,0,0,.25)' }} />} placeholder="产品名称" />
             )}
           </Form.Item>
           <Form.Item className="search-button">
             {this.searchDetail(name, allNums)}
             <Button type="primary" htmlType="submit" className="btn-search">
-              Search
+              搜索
                         </Button>
           </Form.Item>
         </Form>

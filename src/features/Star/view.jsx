@@ -26,9 +26,9 @@ class Star extends Component {
     return (
       <div className="star-con">
         {items.length === 0 && (
-          <h2 className="alert-info">Star List is empty</h2>
+          <h2 className="alert-info">购物车为空</h2>
         )}
-        {isLogin ? "" : <Link to={{ pathname: "/user/login" }} ><Button type="primary">login to get your starlist</Button></Link>}
+        {isLogin ? "" : <Link to={{ pathname: "/user/login" }} ><Button type="primary">登录查看购物车</Button></Link>}
         <Spin size="large" spinning={processing} />
         <ul className="starlist-item">
           {items.length > 0 && items.map(product => (

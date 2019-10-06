@@ -59,13 +59,13 @@ class User extends Component {
               valuePropName: 'checked',
               initialValue: true,
             })(
-              <Checkbox>Remember me</Checkbox>,
+              <Checkbox>记住我</Checkbox>,
             )}
-            <a className='login-form-forgot' href='/'>Forgot password</a>
+            <a className='login-form-forgot' href='/'>忘记密码</a>
             <Button type='primary' htmlType='submit' className='login-form-button'>
-              Log in
+              登录
             </Button>
-            Or <a href='////'>register now!</a>
+            Or <a href='////'>马上注册！</a>
 
           </Form.Item>
           <p className='remind'>{msg}</p>

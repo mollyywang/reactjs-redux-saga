@@ -4,8 +4,8 @@ import PropTypes from 'prop-types'
 function Loading({ error = '', pastDelay = false }) {
   return (
     <Fragment>
-      {error && <div>Error!</div>}
-      {pastDelay && <div>Loading...</div>}
+      {error && <div>发生错误Error!</div>}
+      {pastDelay && <div>正在加载Loading...</div>}
     </Fragment>
   )
 }

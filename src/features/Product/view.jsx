@@ -58,7 +58,7 @@ class Product extends Component {
         <b style={{ backgroundImage: `url(${image})` }} alt='product' className='pic' />
         <div className='detail'>
           <p className='name'>{name}</p>
-          <p className='price'><Icon type='pay-circle' /> {price} AU </p>
+          <p className='price'><Icon type='pay-circle' /> {price} 元 </p>
           {this.isDoDelete(typeS, isInStar)}
         </div>
       </div>
